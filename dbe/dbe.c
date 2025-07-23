@@ -593,7 +593,7 @@ ProcDbeGetVisualInfo(ClientPtr client)
 
     count = (stuff->n == 0) ? screenInfo.numScreens : stuff->n;
 
-    struct x_rpcbuf rpcbuf = { .swapped = client->swapped };
+    x_rpcbuf_t rpcbuf = { .swapped = client->swapped };
 
     for (i = 0; i < count; i++) {
         ScreenPtr pScreen = (stuff->n == 0) ? screenInfo.screens[i] :
